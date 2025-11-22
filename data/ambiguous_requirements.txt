@@ -1,0 +1,15 @@
+1. The system shall respond quickly to user actions.
+
+2. The model should be user-friendly and easy to use.
+
+3. The system must automatically scale when appropriate.
+
+4. The interface shall load as fast as possible.
+
+5. The model should be robust to different environments.
+
+6. The dataset should be sufficiently large for training.
+
+7. The system shall optimize performance.
+
+8. The application shall open rapidly on all devices.
