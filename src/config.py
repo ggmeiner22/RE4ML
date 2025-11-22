@@ -1,7 +1,7 @@
 from pathlib import Path
 
 # Path to labeled dataset for experiments
-DATA_PATH = Path("data/requirements_labeled.csv")
+DATA_PATH = Path("data/mixed_requirements.txt")
 
 # Terms for QuARS-style rule-based ambiguity detection
 AMBIGUOUS_TERMS = [

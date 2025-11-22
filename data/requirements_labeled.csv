@@ -1,6 +1,0 @@
-id,text,label
-1,"The system shall respond quickly to user queries.",ambiguous
-2,"The model shall achieve at least 0.90 F1-score on the validation dataset.",clear
-3,"The system should be user-friendly and robust.",ambiguous
-4,"The model shall detect drift by monitoring PSI > 0.2 on key features.",clear
-5,"The system shall minimize latency.",ambiguous
