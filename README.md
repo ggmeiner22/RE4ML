@@ -37,12 +37,12 @@ Detectors:
 
 #### Rule-based + LLM, with rewrite suggestions
 ```bash
-python3 analyze_file.py data/sample_requirements.pdf --detector both --rewrite
+python3 analyze_file.py data/mixed_requirements.txt --detector both --rewrite
 ```
 
 #### Only LLM with rewrites
 ```bash
-python3 analyze_file.py path/to/requirements.txt --detector llm --rewrite
+python3 analyze_file.py data/mixed_requirements.txt --detector llm --rewrite
 ```
 #### Args
 | Flag              | Description                                                  |

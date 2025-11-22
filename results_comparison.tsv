@@ -1,9 +1,0 @@
-id	text	ground-truth	rule_based	llm
-1	The system shall respond quickly to user requests.	ambiguous	ambiguous	clear
-2	The model shall achieve at least 90% accuracy on the test set.	clear	clear	clear
-3	The system should be user-friendly and intuitive.	ambiguous	ambiguous	ambiguous
-4	Drift shall be detected if KS-statistic > 0.1 on any input feature.	clear	clear	clear
-5	The service should minimize latency.	ambiguous	ambiguous	clear
-6	The model shall classify images at a rate of at least 20 FPS on an NVIDIA T4 GPU.	clear	clear	clear
-7	The application shall be reliable.	ambiguous	ambiguous	clear
-8	The monitoring service shall trigger an alert when error rate exceeds 2% for more than 3 minutes.	clear	clear	clear
