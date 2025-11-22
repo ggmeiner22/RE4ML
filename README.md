@@ -2,8 +2,8 @@
 
 This prototype:
 - Trains/evaluates rule-based vs LLM-based ambiguity detection on a labeled requirements CSV.
-- Provides a CLI `analyze_file.py` to scan a .txt or .pdf document and flag ambiguous requirements.
-- Provides an experiment `run_experiment.py` to show numerical data based on the requirements.
+- Provides a CLI `analyze_file.py` to scan a .txt document and flag ambiguous requirements.
+- Provides a CLI `run_experiment.py` to scan a .csv file with a ground-truth label and outputs metrics.
 
 ## Setup
 
@@ -25,7 +25,7 @@ ollama serve   # if not already running
 
 ## Analyze a requirements document
 ```bash
-python3 analyze_file.py path/to/file.pdf --detector both
+python3 analyze_file.py path/to/file.txt --detector both
 ```
 
 Detectors:
@@ -47,7 +47,7 @@ python3 analyze_file.py data/mixed_requirements.txt --detector llm --rewrite
 #### Args
 | Flag              | Description                                                  |
 | ----------------- | ------------------------------------------------------------ |
-| `file`            | Path to `.txt` or `.pdf` file containing requirements        |
+| `file`            | Path to `.txt` file containing requirements                  |
 | `--detector rule` | Only run rule-based detector                                 |
 | `--detector llm`  | Only run LLM-based detector (via Ollama)                     |
 | `--detector both` | Run both (recommended)                                       |
