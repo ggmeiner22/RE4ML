@@ -33,18 +33,18 @@ Detectors:
 - llm – only LLM-based
 - both – compare both
 
-## How to run with rewrites
+### How to run with rewrites
 
-### Rule-based + LLM, with rewrite suggestions
+#### Rule-based + LLM, with rewrite suggestions
 ```bash
 python3 analyze_file.py data/sample_requirements.pdf --detector both --rewrite
 ```
 
-### Only LLM with rewrites
+#### Only LLM with rewrites
 ```bash
 python3 analyze_file.py path/to/requirements.txt --detector llm --rewrite
 ```
-## Args
+#### Args
 | Flag              | Description                                                  |
 | ----------------- | ------------------------------------------------------------ |
 | `file`            | Path to `.txt` or `.pdf` file containing requirements        |
@@ -53,7 +53,7 @@ python3 analyze_file.py path/to/requirements.txt --detector llm --rewrite
 | `--detector both` | Run both (recommended)                                       |
 | `--rewrite`       | Show improved rewrite suggestions for ambiguous requirements |
 
-# Experimentation (Rule-Based vs LLM Evaluation)
+## Experimentation (Rule-Based vs LLM Evaluation)
 The experiment compares:
 - Ground-truth labels in data/requirements_labeled.csv
 - Rule-based predictions
@@ -69,6 +69,7 @@ This produces:
 - Console metrics
 - A TSV comparison file: `results_comparison.tsv`
 
+### Metrics
 | Term          | Meaning                                                                        |
 | ------------- | ------------------------------------------------------------------------------ |
 | **Support**   | Number of data points in the dataset that belong to that class (ground truth). |
