@@ -1,6 +1,6 @@
 from typing import Dict, Any
 import json
-# from openai import OpenAI  # Uncomment if using OpenAI client
+import requests
 
 LLM_SYSTEM_PROMPT = """
 You are an expert requirements engineer.
@@ -31,42 +31,42 @@ Respond ONLY with the JSON object described above.
 
 
 class LLMDetector:
-    def __init__(self, client=None, model_name: str = "gpt-4.1-mini"):
+    def __init__(self, model_name: str = "llama3.1", base_url: str = "http://localhost:11434"):
         """
-        Pass in your configured LLM client (e.g., OpenAI()) if you want.
-        For now, this is left as a placeholder.
+        Local FREE detector powered by Ollama.
+
+        Requirements:
+          - Ollama installed (https://ollama.com)
+          - Ollama server running:    `ollama serve`
+          - Model pulled, e.g.:       `ollama pull llama3.1`
         """
-        # Example:
-        # self.client = client or OpenAI()
-        self.client = client
         self.model_name = model_name
+        self.base_url = base_url.rstrip("/")
+        self.chat_url = f"{self.base_url}/api/chat"
 
     def _call_llm_raw(self, text: str) -> str:
         """
-        Call your LLM and return raw string response.
-
-        Replace this implementation with your actual LLM API call.
-        Right now it's a placeholder so this file runs without an API key.
+        Call Ollama chat API and return raw text response.
         """
+        payload = {
+            "model": self.model_name,
+            "messages": [
+                {"role": "system", "content": LLM_SYSTEM_PROMPT},
+                {"role": "user", "content": LLM_USER_TEMPLATE.format(text=text)},
+            ],
+            "stream": False,
+        }
 
-        # Example with OpenAI (uncomment and adjust):
-        #
-        # response = self.client.chat.completions.create(
-        #     model=self.model_name,
-        #     messages=[
-        #         {"role": "system", "content": LLM_SYSTEM_PROMPT},
-        #         {"role": "user", "content": LLM_USER_TEMPLATE.format(text=text)},
-        #     ],
-        #     temperature=0.0,
-        # )
-        # raw = response.choices[0].message.content
+        resp = requests.post(self.chat_url, json=payload)
+        resp.raise_for_status()
+        data = resp.json()
 
-        # Placeholder JSON so code runs without an API call:
-        raw = json.dumps({
-            "label": "ambiguous",
-            "reason": "Placeholder LLM result: configure real API call.",
-            "rewrite": "Placeholder rewrite suggestion."
-        })
+        # Ollama chat API returns:
+        # { "message": { "role": "...", "content": "..." }, ... }
+        raw = data.get("message", {}).get("content", "")
+        if not raw:
+            # fallback if something weird happens
+            raw = "{}"
         return raw
 
     def _parse_json(self, raw: str) -> Dict[str, Any]:
@@ -74,25 +74,24 @@ class LLMDetector:
 
         # Handle ```json ... ``` wrappers if the model adds them
         if raw.startswith("```"):
-            # strip leading/trailing fences
             raw = raw.strip("`")
-            # after stripping backticks, it may start with 'json'
             if raw.lower().startswith("json"):
                 raw = raw[4:].strip()
 
         try:
             parsed = json.loads(raw)
-        except json.JSONDecodeError:
-            # Fall back to a safe default
+        except Exception:
             parsed = {
                 "label": "ambiguous",
                 "reason": "Failed to parse JSON from LLM output.",
                 "rewrite": None,
             }
+
         # Normalize fields
         label = str(parsed.get("label", "ambiguous")).lower()
         if label not in ("clear", "ambiguous"):
             label = "ambiguous"
+
         reason = str(parsed.get("reason", "")).strip()
         rewrite = parsed.get("rewrite", None)
         if rewrite is not None:

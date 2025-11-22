@@ -7,17 +7,24 @@ This prototype:
 ## Setup
 
 ```bash
-pip install -r requirements.txt
-```
+python3 -m venv .venv
+# Windows:
+.\.venv\Scripts\Activate
+# macOS/Linux:
+source .venv/bin/activate
 
-## Run experiment on labeled CSV
-```bash
-python run_experiment.py
+python3 -m pip install --upgrade pip
+python3 -m pip install -r requirements.txt
+
+sudo snap install ollama
+ollama pull llama3.1
+
+ollama serve   # if not already running
 ```
 
 ## Analyze a requirements document
 ```bash
-python analyze_file.py path/to/file.pdf --detector both
+python3 analyze_file.py path/to/file.pdf --detector both
 ```
 
 Detectors:
@@ -28,7 +35,11 @@ Detectors:
 ## How to run with rewrites
 
 ### Rule-based + LLM, with rewrite suggestions
-python analyze_file.py path/to/requirements.pdf --detector both --rewrite
+```bash
+python3 analyze_file.py data/sample_requirements.pdf --detector both --rewrite
+```
 
 ### Only LLM with rewrites
-python analyze_file.py path/to/requirements.txt --detector llm --rewrite
+```bash
+python3 analyze_file.py path/to/requirements.txt --detector llm --rewrite
+```
