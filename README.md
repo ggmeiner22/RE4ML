@@ -3,6 +3,7 @@
 This prototype:
 - Trains/evaluates rule-based vs LLM-based ambiguity detection on a labeled requirements CSV.
 - Provides a CLI `analyze_file.py` to scan a .txt or .pdf document and flag ambiguous requirements.
+- Provides an experiment `run_experiment.py` to show numerical data based on the requirements.
 
 ## Setup
 
@@ -43,3 +44,35 @@ python3 analyze_file.py data/sample_requirements.pdf --detector both --rewrite
 ```bash
 python3 analyze_file.py path/to/requirements.txt --detector llm --rewrite
 ```
+## Args
+| Flag              | Description                                                  |
+| ----------------- | ------------------------------------------------------------ |
+| `file`            | Path to `.txt` or `.pdf` file containing requirements        |
+| `--detector rule` | Only run rule-based detector                                 |
+| `--detector llm`  | Only run LLM-based detector (via Ollama)                     |
+| `--detector both` | Run both (recommended)                                       |
+| `--rewrite`       | Show improved rewrite suggestions for ambiguous requirements |
+
+# Experimentation (Rule-Based vs LLM Evaluation)
+The experiment compares:
+- Ground-truth labels in data/requirements_labeled.csv
+- Rule-based predictions
+- LLM-based predictions (via Ollama)
+- Outputs precision, recall, F1, and detailed reports
+
+Run:
+```bash
+python run_experiment.py data/mixed_requirements.csv
+```
+
+This produces:
+- Console metrics
+- A TSV comparison file: `results_comparison.tsv`
+
+| Term          | Meaning                                                                        |
+| ------------- | ------------------------------------------------------------------------------ |
+| **Support**   | Number of data points in the dataset that belong to that class (ground truth). |
+| **Precision** | Of the predicted positives, how many were correct?                             |
+| **Recall**    | Of the actual positives, how many were detected?                               |
+| **F1**        | Harmonic mean of precision and recall.                                         |
+

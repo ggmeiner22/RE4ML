@@ -1,0 +1,9 @@
+id,text,label
+1,"The system shall respond quickly to user actions.",ambiguous
+2,"The model should be user-friendly and easy to use.",ambiguous
+3,"The system must automatically scale when appropriate.",ambiguous
+4,"The interface shall load as fast as possible.",ambiguous
+5,"The model should be robust to different environments.",ambiguous
+6,"The dataset should be sufficiently large for training.",ambiguous
+7,"The system shall optimize performance.",ambiguous
+8,"The application shall open rapidly on all devices.",ambiguous

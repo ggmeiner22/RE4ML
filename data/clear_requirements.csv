@@ -1,0 +1,6 @@
+id,text,label
+1,"The model shall achieve an F1-score of ≥ 0.92 on the held-out validation dataset.",clear
+2,"The API shall respond within 150 ms for 95% of requests under a load of 500 concurrent users.",clear
+3,"The system shall detect data drift when Population Stability Index (PSI) > 0.2 for any monitored feature.",clear
+4,"The trained model shall store all versions using semantic versioning with a changelog entry for each update.",clear
+5,"The application shall support up to 10,000 daily active users without performance degradation.",clear
