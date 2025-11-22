@@ -1,0 +1,3 @@
+PyPDF2
+scikit-learn
+openai  # or your preferred LLM client; you can remove if only using rule-based
