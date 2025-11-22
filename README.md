@@ -24,3 +24,11 @@ Detectors:
 - rule – only rule-based
 - llm – only LLM-based
 - both – compare both
+
+## How to run with rewrites
+
+### Rule-based + LLM, with rewrite suggestions
+python analyze_file.py path/to/requirements.pdf --detector both --rewrite
+
+### Only LLM with rewrites
+python analyze_file.py path/to/requirements.txt --detector llm --rewrite

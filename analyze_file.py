@@ -4,10 +4,10 @@ Command-line tool to analyze a TXT or PDF file of requirements and
 flag ambiguous / unclear ones using:
 
 - A rule-based QuARS-style detector
-- An optional LLM-based detector
+- An optional LLM-based detector (with rewrite suggestions)
 
 Usage:
-    python analyze_file.py path/to/file.pdf --detector both
+    python analyze_file.py path/to/file.pdf --detector both --rewrite
 """
 
 import argparse
@@ -24,6 +24,7 @@ def print_requirement_report(
     requirements: List[str],
     use_rule: bool,
     use_llm: bool,
+    show_rewrite: bool,
 ):
     rb_detector = RuleBasedDetector() if use_rule else None
     llm_detector = LLMDetector() if use_llm else None
@@ -48,11 +49,22 @@ def print_requirement_report(
             llm_result = llm_detector.analyze(req)
             llm_label = llm_result.get("label", "ambiguous").lower()
             reason = llm_result.get("reason", "")
+            rewrite = llm_result.get("rewrite", None)
+
             if llm_label not in ("clear", "ambiguous"):
                 llm_label = "ambiguous"
+
             print(f"\nLLM-based verdict: {llm_label.upper()}")
             if reason:
                 print(f"  • {reason}")
+
+            if show_rewrite:
+                if llm_label == "ambiguous" and rewrite:
+                    print("\n  Suggested rewrite:")
+                    print(f"    {rewrite}")
+                elif llm_label == "clear":
+                    print("\n  Suggested rewrite:")
+                    print("    (requirement already clear; no rewrite needed)")
         print()
 
 
@@ -70,6 +82,11 @@ def parse_args() -> argparse.Namespace:
         choices=["rule", "llm", "both"],
         default="both",
         help="Which detector to run (default: both)",
+    )
+    parser.add_argument(
+        "--rewrite",
+        action="store_true",
+        help="If set, and LLM detector is used, also show rewrite suggestions for clarity uplift.",
     )
     return parser.parse_args()
 
@@ -100,10 +117,15 @@ def main():
     use_rule = args.detector in ("rule", "both")
     use_llm = args.detector in ("llm", "both")
 
+    if args.rewrite and not use_llm:
+        print("Note: --rewrite has no effect without LLM detector; enabling LLM automatically.")
+        use_llm = True
+
     print_requirement_report(
         requirements=candidates,
         use_rule=use_rule,
         use_llm=use_llm,
+        show_rewrite=args.rewrite,
     )
 
 

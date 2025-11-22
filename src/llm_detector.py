@@ -4,23 +4,29 @@ import json
 
 LLM_SYSTEM_PROMPT = """
 You are an expert requirements engineer.
-Given a single software or ML system requirement, decide whether it is CLEAR or AMBIGUOUS.
 
-A requirement is AMBIGUOUS if:
-- It uses vague terms (e.g., 'fast', 'user-friendly', 'robust') without measurable criteria, OR
-- It refers to unstated conditions (e.g., 'as needed', 'when appropriate'), OR
-- It lacks necessary details like thresholds, units, or clear actors.
+Given a single software or ML system requirement, you MUST:
 
-Return ONLY a JSON object with fields:
-- label: "clear" or "ambiguous"
-- reason: a short explanation.
+1. Decide whether it is CLEAR or AMBIGUOUS.
+2. Give a short explanation (reason).
+3. If it is AMBIGUOUS, propose a clearer rewrite that:
+   - Uses measurable, testable language.
+   - Adds thresholds/units where appropriate.
+   - Keeps the original intent.
+
+Output MUST be a JSON object with fields:
+- "label": "clear" or "ambiguous"
+- "reason": string
+- "rewrite": string or null
+
+If the requirement is already clear, set "rewrite" to null.
 """
 
 LLM_USER_TEMPLATE = """
 Requirement:
 "{text}"
 
-Respond as specified.
+Respond ONLY with the JSON object described above.
 """
 
 
@@ -35,9 +41,9 @@ class LLMDetector:
         self.client = client
         self.model_name = model_name
 
-    def _call_llm(self, text: str) -> Dict[str, Any]:
+    def _call_llm_raw(self, text: str) -> str:
         """
-        Call your LLM and return parsed JSON.
+        Call your LLM and return raw string response.
 
         Replace this implementation with your actual LLM API call.
         Right now it's a placeholder so this file runs without an API key.
@@ -54,22 +60,66 @@ class LLMDetector:
         #     temperature=0.0,
         # )
         # raw = response.choices[0].message.content
-        #
-        # # Try to extract JSON
-        # raw = raw.strip()
-        # if raw.startswith("```"):
-        #     # Remove ```json ... ``` wrapper
-        #     raw = raw.strip("`")
-        #     if raw.lower().startswith("json"):
-        #         raw = raw[4:].strip()
-        # parsed = json.loads(raw)
 
-        # Placeholder implementation (always "ambiguous"):
-        parsed = {
+        # Placeholder JSON so code runs without an API call:
+        raw = json.dumps({
             "label": "ambiguous",
-            "reason": "Placeholder LLM result: configure real API call."
-        }
-        return parsed
+            "reason": "Placeholder LLM result: configure real API call.",
+            "rewrite": "Placeholder rewrite suggestion."
+        })
+        return raw
+
+    def _parse_json(self, raw: str) -> Dict[str, Any]:
+        raw = raw.strip()
+
+        # Handle ```json ... ``` wrappers if the model adds them
+        if raw.startswith("```"):
+            # strip leading/trailing fences
+            raw = raw.strip("`")
+            # after stripping backticks, it may start with 'json'
+            if raw.lower().startswith("json"):
+                raw = raw[4:].strip()
+
+        try:
+            parsed = json.loads(raw)
+        except json.JSONDecodeError:
+            # Fall back to a safe default
+            parsed = {
+                "label": "ambiguous",
+                "reason": "Failed to parse JSON from LLM output.",
+                "rewrite": None,
+            }
+        # Normalize fields
+        label = str(parsed.get("label", "ambiguous")).lower()
+        if label not in ("clear", "ambiguous"):
+            label = "ambiguous"
+        reason = str(parsed.get("reason", "")).strip()
+        rewrite = parsed.get("rewrite", None)
+        if rewrite is not None:
+            rewrite = str(rewrite).strip()
+            if not rewrite:
+                rewrite = None
+
+        return {"label": label, "reason": reason, "rewrite": rewrite}
 
     def analyze(self, text: str) -> Dict[str, Any]:
-        return self._call_llm(text)
+        """
+        Return a dict with:
+        {
+          "label": "clear" or "ambiguous",
+          "reason": "...",
+          "rewrite": "..." or None
+        }
+        """
+        raw = self._call_llm_raw(text)
+        return self._parse_json(raw)
+
+    def rewrite_only(self, text: str) -> str:
+        """
+        Convenience helper: returns only the rewrite suggestion if ambiguous,
+        or the original text if already clear or if no rewrite is provided.
+        """
+        result = self.analyze(text)
+        if result.get("label") == "ambiguous" and result.get("rewrite"):
+            return result["rewrite"]
+        return text
