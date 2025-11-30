@@ -1,0 +1,101 @@
+id,text,label
+1,"The system may adjust workloads automatically during peak hours.",ambiguous
+2,"The API shall return results within 180 ms for 95% of requests.",clear
+3,"The dashboard shall provide scalable visualization components.",ambiguous
+4,"The model shall achieve a minimum F1-score of 0.90 on the evaluation dataset.",clear
+5,"The interface shall offer a user-friendly navigation structure.",ambiguous
+6,"The service shall maintain 99.9% uptime over any 30-day period.",clear
+7,"The workflow could reduce unnecessary user steps.",ambiguous
+8,"The pipeline shall finish data ingestion by 02:30 UTC daily.",clear
+9,"The report generator shall produce summaries in seconds when appropriate.",ambiguous
+10,"The authentication module shall support multifactor authentication.",clear
+11,"The analytics module may include several optional metrics.",ambiguous
+12,"The system shall encrypt all stored credentials using AES-256.",clear
+13,"The UI shall provide adequate visual contrast for readability.",ambiguous
+14,"The API shall support a maximum payload size of 4 MB.",clear
+15,"The ML model may perform better with additional training data.",ambiguous
+16,"The service shall generate hourly system-health snapshots.",clear
+17,"The interface shall remain flexible across various device sizes.",ambiguous
+18,"The model shall produce inference results within 60 ms per item.",clear
+19,"The recommendations might adjust based on historical patterns.",ambiguous
+20,"The data pipeline shall fail safely and produce structured error logs.",clear
+21,"The system could provide quick access to common tools.",ambiguous
+22,"The service shall store logs for at least 120 days.",clear
+23,"The UI shall generally minimize the number of required interactions.",ambiguous
+24,"The deployment process shall complete within 10 minutes.",clear
+25,"The search system may return several relevant options.",ambiguous
+26,"The model shall support incremental training mode.",clear
+27,"The interface shall offer easy to use help resources.",ambiguous
+28,"The autoscaler shall activate when CPU load exceeds 75%.",clear
+29,"The application may include some optional configuration presets.",ambiguous
+30,"The ETL job shall validate schema constraints before commit.",clear
+31,"The notifications could arrive more quickly depending on network load.",ambiguous
+32,"The API shall send 4xx responses for invalid authentication tokens.",clear
+33,"The dashboard may provide significantly improved monitoring detail.",ambiguous
+34,"The storage engine shall complete snapshot replication within 5 seconds.",clear
+35,"The system shall minimize unnecessary memory use when possible.",ambiguous
+36,"The service shall block requests with malformed payloads.",clear
+37,"The RL model might adapt its policy over time with more data.",ambiguous
+38,"The infrastructure shall auto-rotate TLS certificates every 90 days.",clear
+39,"The workflow may include several optional review steps.",ambiguous
+40,"The monitoring tool shall expose metrics through a standardized endpoint.",clear
+41,"The search function shall offer quick filtering across indexed fields.",ambiguous
+42,"The API gateway shall reject unencrypted HTTP requests.",clear
+43,"The system may optimize performance based on hardware capabilities.",ambiguous
+44,"The ML pipeline shall export training results to the experiment registry.",clear
+45,"The UI may include many auxiliary components.",ambiguous
+46,"The service shall emit alerts within 5 seconds of detecting a critical event.",clear
+47,"The application shall provide sufficient contextual guidance for new users.",ambiguous
+48,"The database shall maintain point-in-time recovery snapshots.",clear
+49,"The system might scale horizontally during heavy compute cycles.",ambiguous
+50,"The logging service shall attach timestamps with millisecond precision.",clear
+51,"The visualization could highlight trends more effectively when appropriate.",ambiguous
+52,"The model registry shall track version metadata for all deployments.",clear
+53,"The workflow may rely on several high-level automation rules.",ambiguous
+54,"The scheduler shall process queued tasks in submission order.",clear
+55,"The UI design could be more user-friendly for first-time users.",ambiguous
+56,"The configuration manager shall apply environment overrides at startup.",clear
+57,"The reports may include some advanced analytics fields.",ambiguous
+58,"The system shall run integration tests before promotion to production.",clear
+59,"The interface usually adapts to display density changes.",ambiguous
+60,"The service shall maintain detailed audit trails for admin actions.",clear
+61,"The model may require adequate labeled data to reach peak performance.",ambiguous
+62,"The backup system shall complete replication by 03:00 UTC daily.",clear
+63,"The application might provide better responsiveness under optimized caching.",ambiguous
+64,"The orchestrator shall restart failed containers automatically.",clear
+65,"The UI could include several shortcuts for faster navigation.",ambiguous
+66,"The API shall respond with JSON format only.",clear
+67,"The workflow may optimize user effort when possible.",ambiguous
+68,"The system shall apply RBAC rules consistently across all endpoints.",clear
+69,"The model might improve significantly with hyperparameter tuning.",ambiguous
+70,"The load balancer shall distribute traffic evenly across nodes.",clear
+71,"The analytics might detect several anomaly patterns.",ambiguous
+72,"The pipeline shall generate reproducible output across repeated executions.",clear
+73,"The app could provide faster routing decisions using cached indices.",ambiguous
+74,"The service shall auto-disable accounts inactive for 120 days.",clear
+75,"The interface may present many recommendations depending on context.",ambiguous
+76,"The job runner shall support parallel execution across 16 threads.",clear
+77,"The UI might usually adapt quickly to user preference changes.",ambiguous
+78,"The model shall include feature-attribution scores for each prediction.",clear
+79,"The dashboard could include several configurable widgets.",ambiguous
+80,"The API shall include correlation IDs in all responses.",clear
+81,"The workflow may involve some optional data-validation stages.",ambiguous
+82,"The security scanner shall block unsigned deployment artifacts.",clear
+83,"The notification system could deliver quick summaries of major events.",ambiguous
+84,"The training server shall log GPU utilization metrics.",clear
+85,"The UI may rely on flexible panels for layout arrangement.",ambiguous
+86,"The application shall restrict password reuse for 12 previous values.",clear
+87,"The pipeline could process many heterogeneous data sources.",ambiguous
+88,"The system shall enforce strict schema validation for incoming payloads.",clear
+89,"The monitoring view may include adequate highlights for unusual events.",ambiguous
+90,"The service shall allocate compute resources based on workload classification.",clear
+91,"The tool might provide several pathways to complete tasks.",ambiguous
+92,"The system shall maintain consistent state across distributed nodes.",clear
+93,"The UI could support user-friendly keyboard commands.",ambiguous
+94,"The service shall finish daily cleanup tasks before 01:00 UTC.",clear
+95,"The workflow may include some high-level abstractions for convenience.",ambiguous
+96,"The job executor shall preserve ordering guarantees for dependent tasks.",clear
+97,"The interface may respond quickly under ideal conditions.",ambiguous
+98,"The model shall meet precision and recall thresholds defined in the SLA.",clear
+99,"The system might allow flexible plugin integration.",ambiguous
+100,"The API shall validate required fields for all POST operations.",clear

@@ -22,6 +22,7 @@ from src.rule_based_detector import RuleBasedDetector
 from src.llm_detector import LLMDetector
 from src.file_utils import load_text_from_txt, load_text_from_pdf
 from src.requirement_parsing import split_into_candidate_requirements
+from src.time_savings import TimeSavings
 
 
 def print_requirement_report(
@@ -32,6 +33,8 @@ def print_requirement_report(
 ):
     rb_detector = RuleBasedDetector() if use_rule else None
     llm_detector = LLMDetector() if use_llm else None
+
+    time_savings = TimeSavings()
 
     # tqdm progress bar over requirements
     for i, req in enumerate(
@@ -70,10 +73,16 @@ def print_requirement_report(
                 if llm_label == "ambiguous" and rewrite:
                     print("\n  Suggested rewrite:")
                     print(f"    {rewrite}")
+                    minutes_saved = time_savings.get_time_savings(req, rewrite)
+                    print("\n  Reading Time Improvement:")
+                    print(f"    {minutes_saved} minutes")
                 elif llm_label == "clear":
                     print("\n  Suggested rewrite:")
                     print("    (requirement already clear; no rewrite needed)")
         print()
+
+    time_savings.print_summary()
+    print()
 
 
 def parse_args() -> argparse.Namespace:

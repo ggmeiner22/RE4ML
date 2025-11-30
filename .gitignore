@@ -209,3 +209,6 @@ __marimo__/
 # Extra
 analyze_results/
 experiment_results/
+
+# Mac
+.DS_Store

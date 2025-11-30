@@ -1,0 +1,251 @@
+id,text,label
+1,"The system should respond quickly to user inputs.",ambiguous
+2,"The application shall support at least 1000 concurrent users with response times under 200ms.",clear
+3,"The interface must be user-friendly and intuitive.",ambiguous
+4,"Database queries shall complete within 50ms for 95% of requests.",clear
+5,"The system might need to scale to handle increased load.",ambiguous
+6,"User authentication shall support OAuth 2.0 and SAML 2.0 protocols.",clear
+7,"The model should be robust to noisy input data.",ambiguous
+8,"The API shall return HTTP status code 429 when rate limit of 1000 requests per hour is exceeded.",clear
+9,"Performance should be better than the previous version.",ambiguous
+10,"All user passwords shall be hashed using bcrypt with cost factor 12.",clear
+11,"The system may require additional resources when needed.",ambiguous
+12,"The application shall maintain 99.9% uptime excluding scheduled maintenance.",clear
+13,"The interface could be more flexible for different user types.",ambiguous
+14,"Data backups shall be performed daily and retained for 30 days.",clear
+15,"Response times should be fast under normal conditions.",ambiguous
+16,"The system shall encrypt all sensitive data using AES-256 encryption.",clear
+17,"The model needs to handle many different input formats.",ambiguous
+18,"User sessions shall expire after 30 minutes of inactivity.",clear
+19,"The system should be scalable to meet future demands.",ambiguous
+20,"Error logs shall include timestamp, error code, and user ID for all exceptions.",clear
+21,"Updates should be applied when appropriate.",ambiguous
+22,"The application shall support Chrome 90+, Firefox 88+, and Safari 14+.",clear
+23,"The algorithm might need optimization for better performance.",ambiguous
+24,"User registration shall require email verification within 24 hours.",clear
+25,"The system shall be reliable under various conditions.",ambiguous
+26,"API responses shall include Content-Type header with application/json.",clear
+27,"Some features could be improved based on user feedback.",ambiguous
+28,"The database shall maintain referential integrity with cascading deletes.",clear
+29,"The interface should be easy to use for non-technical users.",ambiguous
+30,"File uploads shall be limited to 50MB per file.",clear
+31,"The system may need to integrate with several external services.",ambiguous
+32,"Password reset tokens shall be valid for exactly 1 hour.",clear
+33,"Performance should significantly improve over time.",ambiguous
+34,"The application shall validate all user inputs against SQL injection attacks.",clear
+35,"The model should generally work well with different data types.",ambiguous
+36,"All API endpoints shall return standardized error messages in JSON format.",clear
+37,"The system could benefit from additional monitoring tools.",ambiguous
+38,"User data exports shall be available in CSV and JSON formats.",clear
+39,"Response times might vary depending on server load.",ambiguous
+40,"The system shall comply with GDPR requirements for EU users.",clear
+41,"The interface should be flexible enough for future changes.",ambiguous
+42,"Email notifications shall be sent within 5 minutes of triggering events.",clear
+43,"The algorithm may require tuning for optimal results.",ambiguous
+44,"Database connections shall timeout after 10 seconds of inactivity.",clear
+45,"The system should handle errors gracefully when possible.",ambiguous
+46,"User profiles shall store last login timestamp and IP address.",clear
+47,"Performance could be worse during peak usage hours.",ambiguous
+48,"The application shall support internationalization with UTF-8 encoding.",clear
+49,"Some configuration options might need adjustment.",ambiguous
+50,"API rate limiting shall use token bucket algorithm with 1000 tokens per hour.",clear
+51,"The system should be quick to deploy and configure.",ambiguous
+52,"All financial calculations shall be accurate to 4 decimal places.",clear
+53,"The model might perform differently with various datasets.",ambiguous
+54,"User roles shall include admin, moderator, and basic with defined permissions.",clear
+55,"The interface could use some improvements for better usability.",ambiguous
+56,"Search functionality shall return results within 2 seconds for queries under 10 words.",clear
+57,"The system should maximize efficiency where possible.",ambiguous
+58,"Data validation shall reject entries with malformed email formats.",clear
+59,"Response times may be adequate for most use cases.",ambiguous
+60,"The application shall generate audit logs for all administrative actions.",clear
+61,"The model should minimize errors in predictions.",ambiguous
+62,"User sessions shall be stored in Redis with 7-day expiration.",clear
+63,"The system might need better error handling in some cases.",ambiguous
+64,"API documentation shall include examples for all endpoints.",clear
+65,"Performance should be sufficient for typical workloads.",ambiguous
+66,"The database shall maintain indexes on frequently queried columns.",clear
+67,"The interface could be more intuitive for new users.",ambiguous
+68,"File downloads shall support resumable transfers using byte ranges.",clear
+69,"The algorithm may need to be optimized for speed.",ambiguous
+70,"User authentication shall require multi-factor authentication for admin accounts.",clear
+71,"The system should scale as needed with growing user base.",ambiguous
+72,"All external API calls shall implement retry logic with exponential backoff.",clear
+73,"The model might benefit from additional training data.",ambiguous
+74,"The application shall support dark mode and light mode themes.",clear
+75,"Response times should be fast enough for real-time interactions.",ambiguous
+76,"Data exports shall include all user-generated content upon request.",clear
+77,"The system could use better monitoring and alerting.",ambiguous
+78,"User passwords must be at least 12 characters with mixed character types.",clear
+79,"Performance may vary depending on hardware configuration.",ambiguous
+80,"The API shall version all endpoints with v1/ prefix.",clear
+81,"The interface should be easy to navigate and understand.",ambiguous
+82,"Database backups shall be verified for integrity weekly.",clear
+83,"The model should be reliable across different scenarios.",ambiguous
+84,"User notifications shall be customizable per user preferences.",clear
+85,"The system might require additional security measures.",ambiguous
+86,"All user-generated content shall be scanned for malicious code.",clear
+87,"Response times could be improved with caching.",ambiguous
+88,"The application shall support keyboard shortcuts for common actions.",clear
+89,"The algorithm should optimize for accuracy and speed.",ambiguous
+90,"User data shall be permanently deleted within 30 days of account deletion.",clear
+91,"The system may need to handle many concurrent requests.",ambiguous
+92,"API responses shall be compressed using gzip for payloads over 1KB.",clear
+93,"The interface could be more user-friendly for mobile devices.",ambiguous
+94,"Error messages shall provide specific guidance for resolution.",clear
+95,"Performance should be better than industry standards.",ambiguous
+96,"The system shall implement CSRF protection for all state-changing requests.",clear
+97,"The model might need regular updates to maintain accuracy.",ambiguous
+98,"User activity shall be tracked with event timestamps and actions.",clear
+99,"The system should be flexible enough to accommodate new features.",ambiguous
+100,"Database transactions shall maintain ACID properties for financial operations.",clear
+101,"Response times may be quick under ideal conditions.",ambiguous
+102,"The application shall support right-to-left languages for international users.",clear
+103,"The algorithm could use some tuning for better results.",ambiguous
+104,"User sessions shall be securely invalidated upon logout.",clear
+105,"The system should minimize resource usage when possible.",ambiguous
+106,"All external dependencies shall be monitored for security vulnerabilities.",clear
+107,"The interface might need improvements for accessibility.",ambiguous
+108,"File uploads shall be scanned for viruses before processing.",clear
+109,"Performance should be adequate for the intended use case.",ambiguous
+110,"The system shall generate monthly usage reports by the 5th of each month.",clear
+111,"The model may require significant computational resources.",ambiguous
+112,"User permissions shall be editable through admin interface with approval workflow.",clear
+113,"The system could benefit from better documentation.",ambiguous
+114,"API authentication shall use JWT tokens with 1-hour expiration.",clear
+115,"Response times should be fast for most operations.",ambiguous
+116,"The application shall support high contrast mode for visually impaired users.",clear
+117,"The algorithm might perform worse with noisy data.",ambiguous
+118,"Database queries shall use parameterized statements to prevent injection.",clear
+119,"The system should be easy to maintain and extend.",ambiguous
+120,"User data shall be encrypted at rest using industry-standard algorithms.",clear
+121,"Performance may need optimization in future releases.",ambiguous
+122,"The application shall support offline functionality for core features.",clear
+123,"The interface should be intuitive enough for first-time users.",ambiguous
+124,"All API responses shall include request ID for tracking purposes.",clear
+125,"The model could be more accurate with additional features.",ambiguous
+126,"User accounts shall be locked after 5 failed login attempts.",clear
+127,"The system might require regular updates for security.",ambiguous
+128,"Data validation shall reject entries with SQL keywords in text fields.",clear
+129,"Response times should be quick enough to avoid user frustration.",ambiguous
+130,"The system shall maintain audit trails for all data modifications.",clear
+131,"The algorithm should maximize predictive accuracy.",ambiguous
+132,"User interface shall comply with WCAG 2.1 AA accessibility standards.",clear
+133,"The system may need to scale to handle peak traffic.",ambiguous
+134,"API rate limits shall be configurable per user tier.",clear
+135,"Performance could be better with hardware upgrades.",ambiguous
+136,"The application shall support real-time collaboration features.",clear
+137,"The model might need adjustment for different market segments.",ambiguous
+138,"User preferences shall be synchronized across devices.",clear
+139,"The system should be reliable under heavy load.",ambiguous
+140,"Database performance shall be monitored with alerts for slow queries.",clear
+141,"The interface could use a more modern design.",ambiguous
+142,"User data shall be partitioned by tenant in multi-tenant architecture.",clear
+143,"Response times may vary based on network conditions.",ambiguous
+144,"The system shall implement proper CORS headers for web clients.",clear
+145,"The algorithm should be robust to missing data points.",ambiguous
+146,"User sessions shall timeout after exactly 60 minutes of inactivity.",clear
+147,"The system might benefit from machine learning optimization.",ambiguous
+148,"All external API integrations shall have circuit breaker pattern implemented.",clear
+149,"Performance should be sufficient for enterprise use.",ambiguous
+150,"The application shall support bulk operations for data management.",clear
+151,"The model could use more efficient algorithms.",ambiguous
+152,"User authentication shall support biometric verification where available.",clear
+153,"The system may need additional validation rules.",ambiguous
+154,"Database connections shall be pooled with maximum 100 connections.",clear
+155,"Response times should be fast for critical operations.",ambiguous
+156,"The system shall generate comprehensive API documentation with Swagger.",clear
+157,"The interface might be too complex for some users.",ambiguous
+158,"User activity logs shall be retained for 365 days for compliance.",clear
+159,"Performance could improve with code optimization.",ambiguous
+160,"The application shall support progressive web app capabilities.",clear
+161,"The algorithm should minimize false positive rates.",ambiguous
+162,"User data exports shall include complete history in standardized format.",clear
+163,"The system might require custom configuration for different clients.",ambiguous
+164,"API endpoints shall validate content-type headers for all requests.",clear
+165,"Response times may be adequate but could be better.",ambiguous
+166,"The system shall implement proper input sanitization for XSS prevention.",clear
+167,"The model should be scalable to larger datasets.",ambiguous
+168,"User notifications shall be delivered via email, SMS, and push notifications.",clear
+169,"The interface could benefit from user testing and feedback.",ambiguous
+170,"Database indexes shall be optimized quarterly based on query patterns.",clear
+171,"Performance should be reliable across different environments.",ambiguous
+172,"The application shall support automated testing for 80% of code coverage.",clear
+173,"The algorithm might need calibration for different regions.",ambiguous
+174,"User permissions shall follow principle of least privilege.",clear
+175,"The system should be easy to deploy in different infrastructures.",ambiguous
+176,"All cryptographic operations shall use approved algorithms and key lengths.",clear
+177,"Response times could be faster with better hardware.",ambiguous
+178,"The system shall support horizontal scaling with load balancers.",clear
+179,"The model may require significant memory for processing.",ambiguous
+180,"User interface shall be responsive on mobile, tablet, and desktop.",clear
+181,"The system should maximize throughput where possible.",ambiguous
+182,"API responses shall be cached for 5 minutes for frequently accessed data.",clear
+183,"Performance might degrade with large numbers of users.",ambiguous
+184,"The application shall support feature flags for gradual rollouts.",clear
+185,"The algorithm could be more efficient in resource usage.",ambiguous
+186,"User data shall be backed up to geographically separate locations.",clear
+187,"The interface should be flexible for different workflow needs.",ambiguous
+188,"Database replication shall maintain consistency within 1 second.",clear
+189,"Response times should be quick for user satisfaction.",ambiguous
+190,"The system shall implement proper session management with secure cookies.",clear
+191,"The model might need regular retraining to maintain performance.",ambiguous
+192,"User accounts shall require re-authentication for sensitive operations.",clear
+193,"Performance could be optimized through profiling and tuning.",ambiguous
+194,"The application shall support single sign-on with enterprise identity providers.",clear
+195,"The system should be robust to network failures.",ambiguous
+196,"All user inputs shall be validated on both client and server sides.",clear
+197,"The interface may need simplification for better user experience.",ambiguous
+198,"Database migrations shall be backward compatible for rolling deployments.",clear
+199,"Response times should be adequate for the application domain.",ambiguous
+200,"The system shall monitor and alert on security events in real-time.",clear
+201,"The algorithm should minimize computational complexity.",ambiguous
+202,"User preferences shall be exportable in standard JSON format.",clear
+203,"The system might require additional error handling mechanisms.",ambiguous
+204,"API versioning shall support deprecated versions for 6 months.",clear
+205,"Performance should be fast enough for interactive use.",ambiguous
+206,"The application shall support automated deployment pipelines.",clear
+207,"The model could benefit from ensemble methods.",ambiguous
+208,"User data shall be anonymized for analytics purposes.",clear
+209,"The interface should be intuitive without training.",ambiguous
+210,"Database queries shall use read replicas for reporting workloads.",clear
+211,"Response times may be sufficient but not optimal.",ambiguous
+212,"The system shall implement proper logging with log levels and structured format.",clear
+213,"The algorithm should be scalable to handle increasing data volumes.",ambiguous
+214,"User authentication shall support hardware security keys.",clear
+215,"The system might need performance tuning in production.",ambiguous
+216,"All external communications shall use TLS 1.2 or higher.",clear
+217,"Performance should be better than competing solutions.",ambiguous
+218,"The application shall support custom themes and branding.",clear
+219,"The model may require GPU acceleration for training.",ambiguous
+220,"User sessions shall be invalidated when password is changed.",clear
+221,"The system should be easy to integrate with other systems.",ambiguous
+222,"Database backups shall be tested quarterly with restore drills.",clear
+223,"Response times could be improved with asynchronous processing.",ambiguous
+224,"The system shall implement rate limiting to prevent abuse.",clear
+225,"The algorithm should optimize for both precision and recall.",ambiguous
+226,"User interface shall support keyboard navigation for all functions.",clear
+227,"The system might require custom development for specific use cases.",ambiguous
+228,"API documentation shall include code samples in 3 programming languages.",clear
+229,"Performance should be reliable during peak usage periods.",ambiguous
+230,"The application shall support automated scaling based on load metrics.",clear
+231,"The model could use transfer learning for improved performance.",ambiguous
+232,"User data shall be processed in compliance with regional data laws.",clear
+233,"The interface should be adaptable to different user roles.",ambiguous
+234,"Database performance shall be benchmarked monthly against SLAs.",clear
+235,"Response times might be acceptable for most users.",ambiguous
+236,"The system shall implement proper error handling with user-friendly messages.",clear
+237,"The algorithm should be robust to adversarial attacks.",ambiguous
+238,"User accounts shall support two-factor authentication as default.",clear
+239,"Performance could benefit from distributed computing.",ambiguous
+240,"The application shall support canary deployments for new features.",clear
+241,"The model might need feature engineering for better results.",ambiguous
+242,"User data shall be encrypted in transit using latest TLS versions.",clear
+243,"The system should be flexible to accommodate business rule changes.",ambiguous
+244,"API responses shall include pagination for large result sets.",clear
+245,"Performance should be optimized for common use cases.",ambiguous
+246,"The system shall support real-time monitoring and dashboards.",clear
+247,"The algorithm could use hyperparameter tuning for improvement.",ambiguous
+248,"User interface shall load completely within 3 seconds on broadband.",clear
+249,"The system might require additional validation for edge cases.",ambiguous
+250,"Database schema changes shall be reviewed for performance impact.",clear
